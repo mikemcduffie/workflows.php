@@ -4,8 +4,8 @@
 * Description: 	This PHP class object provides several useful functions for retrieving, parsing,
 * 				and formatting data to be used with Alfred Workflows.
 * Author: 		David Ferguson (@jdfwarrior)
-* Revised: 		6/6/2013
-* Version:		0.3.3
+* Revised: 		6/6/2013 (Modified 11/11/2023 by MBM)
+* Version:		0.3.5
 */
 class Workflows {
 
@@ -193,7 +193,7 @@ class Workflows {
 					$c->addAttribute( 'arg', $b[$key] );
 					$c->$key = $b[$key];
 				elseif ( $key == 'type' ):
-					$c->addAttribute( 'type', $b[$key] );
+					$c->addAttribute( 'autocomplete', $b[$key] ?? '' );
 				elseif ( $key == 'valid' ):
 					if ( $b[$key] == 'yes' || $b[$key] == 'no' ):
 						$c->addAttribute( 'valid', $b[$key] );
